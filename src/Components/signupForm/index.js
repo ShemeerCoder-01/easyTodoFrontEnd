@@ -28,7 +28,7 @@ function SignupForm() {
                 }
                 else{
                     const userData = {userName,email,password};
-                    const response = await axios.post(`${process.env.BASE_URL}/user/signup`,userData);
+                    const response = await axios.post(`https://easytodo-y84a.onrender.com/user/signup`,userData);
                     if(response.status === 201){
                         navigate('/Login');
                     }

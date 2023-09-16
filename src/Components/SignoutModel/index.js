@@ -10,7 +10,7 @@ function SignoutModel({setIsClicked}) {
 
   const handleClick = async()=>{
     try{
-      const response = await axios.post(`${process.env.BASE_URL}/user/logout`);
+      const response = await axios.post(`https://easytodo-y84a.onrender.com/user/logout`);
       console.log(response);
       navigate('/login');
       sessionStorage.removeItem('user');

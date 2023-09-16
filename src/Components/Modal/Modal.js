@@ -25,7 +25,7 @@ function Modal({ setFlag, setTodoArr, TodoArr, currTodo,setCurrTodo ,currUser}) 
             const _id = currTodo._id;
             const userEmail = sessionStorage.getItem('user');
             const updatedObj = {_id,taskName,priority,date};
-            const response = await axios.put(`${process.env.BASE_URL}/todo/todos`,updatedObj,{params:{userEmail}});
+            const response = await axios.put(`https://easytodo-y84a.onrender.com/todo/todos`,updatedObj,{params:{userEmail}});
             setTodoArr(response.data.data);
             setTaskName('');
             setDate('');
@@ -54,7 +54,7 @@ function Modal({ setFlag, setTodoArr, TodoArr, currTodo,setCurrTodo ,currUser}) 
 
         try{
             const todoObj = {taskName,priority,date,email:currUser};
-            const response = await axios.post(`${process.env.BASE_URL}/todo/addTodo`,todoObj);
+            const response = await axios.post(`https://easytodo-y84a.onrender.com/todo/addTodo`,todoObj);
             console.log("response is : ",response);
             setTodoArr(response.data.data);
             setFlag(false);

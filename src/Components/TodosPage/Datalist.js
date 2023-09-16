@@ -12,7 +12,7 @@ function Datalist({ setFlag, TodoArr, setTodoArr, setCurrTodo }) {
   async function deleteItem(Id) {
     try {
       const email = sessionStorage.getItem('user');
-      const response = await axios.delete(`${process.env.BASE_URL}/todo/todos/`, {
+      const response = await axios.delete(`https://easytodo-y84a.onrender.com/todo/todos/`, {
         params: {
           todoid: Id,
           email: email
