@@ -17,7 +17,6 @@ function LoginForm() {
     const handleForm = async (e) => {
         setLoading(true);
         e.preventDefault();
-        console.log(process.env.BASE_URL);
         try {
             if(email && password){
                 if(password.length<6 || password.length>16){

@@ -42,7 +42,7 @@ function HomePage() {
     try{
       const email = sessionStorage.getItem('user');
       console.log(email);
-      const response = await axios.get(`${process.env.BASE_URL}/todo/todos`,{
+      const response = await axios.get(`https://easytodo-y84a.onrender.com/todo/todos`,{
         params:{email}
       });
       setTodoArr(response.data.data);
