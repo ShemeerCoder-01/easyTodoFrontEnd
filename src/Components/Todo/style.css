@@ -1,0 +1,29 @@
+.item{
+    background-color: white;
+    color: black;
+    border: 1px solid transparent;
+    padding: 1.2em;
+    border-radius: 0.75rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 6px;
+    margin: 1em 0;
+}
+.item:hover{
+    scale: 1.1;
+}
+.icons{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    gap: 0.5rem;
+}
+.icon{
+    color: black;
+}
+p{
+    font-size: large;
+    font-weight: 400;
+}
+

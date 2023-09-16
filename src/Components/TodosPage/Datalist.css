@@ -1,0 +1,14 @@
+.displayArea{
+    display: flex;
+    flex-flow:row wrap;
+    justify-content: space-evenly;
+}
+.left,.mid,.right{
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+.displayArea h1{
+    text-align: center;
+    text-decoration: underline;
+    color: white;
+}

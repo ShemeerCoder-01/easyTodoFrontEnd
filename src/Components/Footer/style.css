@@ -1,0 +1,40 @@
+.footer{
+    padding: 1.2rem;
+    margin:0  1rem;
+    margin-top: 25rem;
+    border-radius: 0.5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg, rgb(67, 67, 150) 0%, rgb(46, 46, 107) 0%, rgb(5, 5, 41) 100%);
+    background-size: 400% 400%;
+    animation: footeranimation 15s ease infinite;
+}
+
+.footer h2{
+    cursor: pointer;
+    color: #F8F8FF;
+}
+
+.links{
+    display: flex;
+    gap: 0.75rem;
+    margin-right: 2rem;
+}
+.link{
+    text-decoration: none;
+    color: #F8F8FF;
+}
+
+@keyframes footeranimation {
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }   
+}
+

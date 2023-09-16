@@ -1,0 +1,23 @@
+.logOut{
+    background-color: #fff;
+    width: 250px;
+    height: 130px;
+    border-radius: 10px;
+    padding: 0.75rem;
+    position: fixed;
+    top: 5rem;
+    right: 3.5rem;
+    z-index: 10;
+    border: 1.2px solid #212121;
+}
+
+.logOut .logOut-btn{
+    border: none;
+    background-color: #212121;
+    font-size: 1em;
+    font-weight: 500;
+    color: #fff;
+    border-radius: 10px;
+    margin-top: 1rem;
+    padding: 10px 5px;
+}
