@@ -11,7 +11,6 @@ function SignupForm() {
     const [password, setPassword] = useState('');
     const[msg,setMsg]=useState('');
     const navigate = useNavigate();
-    const BASE_URL = process.env.BASE_URL;
 
 
     
@@ -29,7 +28,7 @@ function SignupForm() {
                 }
                 else{
                     const userData = {userName,email,password};
-                    const response = await axios.post(`${BASE_URL}/user/signup`,userData);
+                    const response = await axios.post(`${process.env.BASE_URL}/user/signup`,userData);
                     if(response.status === 201){
                         navigate('/Login');
                     }

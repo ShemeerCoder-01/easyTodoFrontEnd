@@ -5,13 +5,12 @@ import { useNavigate } from 'react-router-dom'
 
 
 function SignoutModel({setIsClicked}) {
-  const BASE_URL = process.env.BASE_URL;
 
   const navigate = useNavigate();
 
   const handleClick = async()=>{
     try{
-      const response = await axios.post(`${BASE_URL}/user/logout`);
+      const response = await axios.post(`${process.env.BASE_URL}/user/logout`);
       console.log(response);
       navigate('/login');
       sessionStorage.removeItem('user');

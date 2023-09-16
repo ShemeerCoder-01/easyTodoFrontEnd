@@ -10,7 +10,6 @@ function LoginForm() {
     const [password, setPassword] = useState('');
     const[msg,setMsg]=useState('');
     const navigate = useNavigate();
-    const BASE_URL = process.env.BASE_URL;
 
 
     
@@ -25,7 +24,7 @@ function LoginForm() {
                 }
                 else{
                     const userData = {email,password};
-                    const response = await axios.post(`${BASE_URL}/user/login`,userData);
+                    const response = await axios.post(`${process.env.BASE_URL}/user/login`,userData);
                     if(response.status === 200){
                         sessionStorage.setItem('user',email);
                         navigate('/Home');

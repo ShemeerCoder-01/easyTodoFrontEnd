@@ -5,14 +5,14 @@ import Todo from '../Todo';
 
 function Datalist({ setFlag, TodoArr, setTodoArr, setCurrTodo }) {
 
-  const BASE_URL = process.env.BASE_URL;
+ 
 
 
   // function to delete the selected element 
   async function deleteItem(Id) {
     try {
       const email = sessionStorage.getItem('user');
-      const response = await axios.delete(`${BASE_URL}/todo/todos/`, {
+      const response = await axios.delete(`${process.env.BASE_URL}/todo/todos/`, {
         params: {
           todoid: Id,
           email: email

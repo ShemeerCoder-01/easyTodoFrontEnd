@@ -16,8 +16,6 @@ function HomePage() {
   const [currUser,setCurrUser] = useState('');
   const [loading,setLoading] = useState(false);
   const navigate = useNavigate();
-  const BASE_URL = process.env.BASE_URL;
-
 
 
   useEffect(()=>{
@@ -44,7 +42,7 @@ function HomePage() {
     try{
       const email = sessionStorage.getItem('user');
       console.log(email);
-      const response = await axios.get(`${BASE_URL}/todo/todos`,{
+      const response = await axios.get(`${process.env.BASE_URL}/todo/todos`,{
         params:{email}
       });
       setTodoArr(response.data.data);

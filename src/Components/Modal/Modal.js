@@ -7,7 +7,6 @@ function Modal({ setFlag, setTodoArr, TodoArr, currTodo,setCurrTodo ,currUser}) 
     const [priority, setPriority] = useState(currTodo?.priority || '');
     const [date, setDate] = useState(currTodo?.date || '');
     const [msg,setMsg] = useState('');
-    const BASE_URL = process.env.BASE_URL;
 
 
     // edit function edits priority and re render the component
@@ -26,7 +25,7 @@ function Modal({ setFlag, setTodoArr, TodoArr, currTodo,setCurrTodo ,currUser}) 
             const _id = currTodo._id;
             const userEmail = sessionStorage.getItem('user');
             const updatedObj = {_id,taskName,priority,date};
-            const response = await axios.put(`${BASE_URL}/todo/todos`,updatedObj,{params:{userEmail}});
+            const response = await axios.put(`${process.env.BASE_URL}/todo/todos`,updatedObj,{params:{userEmail}});
             setTodoArr(response.data.data);
             setTaskName('');
             setDate('');
@@ -55,7 +54,7 @@ function Modal({ setFlag, setTodoArr, TodoArr, currTodo,setCurrTodo ,currUser}) 
 
         try{
             const todoObj = {taskName,priority,date,email:currUser};
-            const response = await axios.post(`${BASE_URL}/todo/addTodo`,todoObj);
+            const response = await axios.post(`${process.env.BASE_URL}/todo/addTodo`,todoObj);
             console.log("response is : ",response);
             setTodoArr(response.data.data);
             setFlag(false);
