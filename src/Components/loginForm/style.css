@@ -41,6 +41,7 @@
     flex-direction: column;
     gap: 1em;
 }
+
 input::placeholder{
     color: gray;
 }
@@ -60,7 +61,6 @@ input::placeholder{
 .login form input:hover{
     border-bottom:2px solid rgb(12,4,4);
 }
-
 
 .auth-btn{
     padding: 7px;
