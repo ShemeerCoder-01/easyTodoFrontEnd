@@ -1,6 +1,5 @@
 import React from 'react'
 import './style.css'
-import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
 
@@ -8,18 +7,12 @@ function SignoutModel({setIsClicked}) {
 
   const navigate = useNavigate();
 
-  const handleClick = async()=>{
-    try{
-      const response = await axios.post(`https://easytodo-y84a.onrender.com/user/logout`);
-      console.log(response);
-      navigate('/login');
-      sessionStorage.removeItem('user');
-      setIsClicked(false);
-    }catch(e){
-      console.log("Error is : ",e);
-    }
-    
+  const handleClick = ()=>{
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    navigate('/login');
   }
+
   return (
     <div className='logOut'>
         <div style={{display:"flex",justifyContent:"end"}}>

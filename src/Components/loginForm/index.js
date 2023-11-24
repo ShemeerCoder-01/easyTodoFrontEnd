@@ -25,8 +25,11 @@ function LoginForm() {
                 else{
                     const userData = {email,password};
                     const response = await axios.post(`https://easytodo-y84a.onrender.com/user/login`,userData);
+                    // const response = await axios.post(`http://localhost:8001/user/login`,userData);
+                    console.log(response);
                     if(response.status === 200){
-                        sessionStorage.setItem('user',email);
+                        localStorage.setItem('user',email);
+                        localStorage.setItem('token',response.data);
                         navigate('/Home');
                     }
                 }
