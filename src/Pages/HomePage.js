@@ -8,6 +8,7 @@ import NavBar from '../Components/Navbar';
 import Loader from '../Components/Loader';
 import Footer from '../Components/Footer';
 
+
 function HomePage() {
   const [flag, setFlag] = useState(false);
   const [isClicked,setIsClicked] = useState(false);

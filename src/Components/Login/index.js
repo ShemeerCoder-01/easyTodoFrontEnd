@@ -1,14 +1,13 @@
-import React, { useState } from 'react';
-import './style.css';
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import React, { useState } from 'react'
 import axios from 'axios';
-import { Link, useNavigate } from 'react-router-dom';
-import Loader from '../Loader';
+import { useNavigate } from 'react-router-dom';
+import IconBar from '../IconBar';
 
-function LoginForm() {
+function Login() {
     const [loading,setLoading] = useState(false);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const[msg,setMsg]=useState('');
     const navigate = useNavigate();
 
 
@@ -18,7 +17,7 @@ function LoginForm() {
         try {
             if(email && password){
                 if(password.length<6 || password.length>16){
-                    setMsg('Password should be 6 to 16 characters long');
+                    // setMsg('Password should be 6 to 16 characters long');
                 }
                 else{
                     const userData = {email,password};
@@ -39,38 +38,34 @@ function LoginForm() {
                 navigate('/');
             }
             if(e.response.data.Error && Object.keys(e.response.data.Error).length !== 0){
-                setMsg(e.response.data?.Error?.details[0]?.message);
+                // setMsg(e.response.data?.Error?.details[0]?.message);
             }
             else{
-                setMsg(e.response.data.message);
+                // setMsg(e.response.data.message);
             }
             
         }
         setLoading(false);
     }
 
-    if(loading) return <Loader/>;
+    
 
 
-    return (
-        <div className='main-container' >
-            <div className='left-Area'></div>
-            <div className='login'>
-                <h1>Login Page</h1>
-                <div>
-                    <form method='post' onSubmit={handleForm}>
-                        <input type='email' placeholder='Email' value={email} onChange={e => setEmail(e.target.value)} required/>
-                        <input type='password' placeholder='Password' value={password} onChange={e => setPassword(e.target.value)} required />
-                        <div className='msgArea'>{msg}</div>
-                        <button className='auth-btn' type='submit'>Login</button>
-                    </form>
-                    <div className='signupRedirect'>
-                        <p> Not signed up yet? Click here to <Link className='link' to={'/'}>Sign Up</Link></p>
-                    </div>
-                </div>
-            </div>
+
+
+  return (
+    <div className="form-container sign-in">
+            <form onSubmit={handleForm}>
+                <h1>Sign In</h1>
+                <IconBar/>
+                <span>Or use your email password</span>
+                <input type="email" placeholder="email" onChange={e => setEmail(e.target.value)}/>
+                <input type="password" placeholder="password" onChange={e => setPassword(e.target.value)}/>
+                <a href="#">Forget Your Password?</a>
+                <button type='submit' disabled={loading}>Sign In</button>
+            </form>
         </div>
-    )
+  )
 }
 
-export default LoginForm;
+export default Login

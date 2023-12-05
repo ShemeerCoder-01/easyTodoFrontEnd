@@ -10,7 +10,7 @@ function SignoutModel({setIsClicked}) {
   const handleClick = ()=>{
     localStorage.removeItem('token');
     localStorage.removeItem('user');
-    navigate('/login');
+    navigate('/');
   }
 
   return (
